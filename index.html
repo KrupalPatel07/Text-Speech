@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-Speech</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        textarea {
+            border: 2px solid black;
+            border-radius: 5px;
+            background-image: radial-gradient(circle 369px at -2.9% 12.9%,
+                    rgba(247, 234, 163, 1)0%,
+                    rgba(236, 180, 238, 0.56)46.4%,
+                    rgba(163, 203, 247, 1)100.7%);
+            margin: 0px;
+            padding: 0px;
+            font-size: 20px;
+            margin-left:550px;
+            margin-top: 100px;
+        }
+        button {
+            color: black;
+            background-color: green;
+            border: 2px solid black;
+            border-radius: 5px;
+            font-size:20px;
+            margin-left: 690px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <textarea name="" id="" cols="30" rows="10" placeholder="Type here..."></textarea><br>
+        <button>Speak</button>
+    </div>
+    <script>
+        let button = document.querySelector("button");
+        let text = document.querySelector("textarea");
+        button.addEventListener("click", () => {
+            let utterance = new SpeechSynthesisUtterance(text.value);
+            speechSynthesis.speak(utterance);
+        });
+    </script>
+</body>
+
+</html>
